@@ -19,7 +19,7 @@
     <!-- ImageClassificationHelper class uses android.util.Size(), which is available from SDK 21.
     -->
     <uses-sdk
-        android:minSdkVersion="23"
+        android:minSdkVersion="24"
         android:targetSdkVersion="36" />
     <!-- Declare features -->
     <uses-feature android:name="android.hardware.camera" />

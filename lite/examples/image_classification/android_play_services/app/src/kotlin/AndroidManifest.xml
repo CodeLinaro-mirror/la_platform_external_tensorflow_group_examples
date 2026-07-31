@@ -19,6 +19,6 @@
     <!-- ImageClassificationHelper class uses android.util.Size(), which is available after SDK 21.
     -->
     <uses-sdk
-        android:minSdkVersion="23"
+        android:minSdkVersion="24"
         android:targetSdkVersion="36" />
 </manifest>
