@@ -27,8 +27,8 @@ import PIL.ImageColor as ImageColor
 import PIL.ImageDraw as ImageDraw
 import PIL.ImageFont as ImageFont
 import six
-from six.moves import range
-from six.moves import zip
+from six.moves import range  # pyrefly: ignore[missing-source-for-stubs]
+from six.moves import zip  # pyrefly: ignore[missing-source-for-stubs]
 import tensorflow.compat.v1 as tf
 
 from tensorflow_examples.lite.model_maker.third_party.efficientdet.visualize import shape_utils
@@ -494,7 +494,7 @@ def draw_bounding_boxes_on_image_tensors(images,
       image = shape_utils.pad_or_clip_nd(image_and_detections[2],
                                          [true_shape[0], true_shape[1], 3])
     if original_image_spatial_shape is not None:
-      image_and_detections[2] = _resize_original_image(image, original_shape)
+      image_and_detections[2] = _resize_original_image(image, original_shape)  # pyrefly: ignore[unbound-name]
 
     image_with_boxes = tf.py_func(visualize_boxes_fn, image_and_detections[2:],
                                   tf.uint8)
@@ -985,7 +985,7 @@ def add_hist_image_summary(values, bins, name):
   tf.summary.image(name, hist_plot)
 
 
-class EvalMetricOpsVisualization(six.with_metaclass(abc.ABCMeta, object)):
+class EvalMetricOpsVisualization(six.with_metaclass(abc.ABCMeta, object)):  # pyrefly: ignore[invalid-inheritance]
   """Abstract base class responsible for visualizations during evaluation.
 
   Currently, summary images are not run during evaluation. One way to produce
