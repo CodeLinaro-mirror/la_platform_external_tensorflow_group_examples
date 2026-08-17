@@ -14,7 +14,7 @@
 # ==============================================================================
 """Label map utility functions."""
 from absl import logging
-from six.moves import range
+from six.moves import range  # pyrefly: ignore[missing-source-for-stubs]
 
 
 def _validate_label_map(label_map):

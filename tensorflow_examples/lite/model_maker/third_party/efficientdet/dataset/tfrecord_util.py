@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 r"""TFRecord related utilities."""
-from six.moves import range
+from six.moves import range  # pyrefly: ignore[missing-source-for-stubs]
 import tensorflow as tf
 
 

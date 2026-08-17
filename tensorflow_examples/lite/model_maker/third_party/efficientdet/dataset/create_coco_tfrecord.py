@@ -153,7 +153,7 @@ def create_tf_example(image,
       is_crowd.append(object_annotations['iscrowd'])
       category_id = int(object_annotations['category_id'])
       category_ids.append(category_id)
-      category_names.append(category_index[category_id]['name'].encode('utf8'))
+      category_names.append(category_index[category_id]['name'].encode('utf8'))  # pyrefly: ignore[unsupported-operation]
       area.append(object_annotations['area'])
 
       if include_masks:
