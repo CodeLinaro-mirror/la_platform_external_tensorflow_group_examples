@@ -26,7 +26,7 @@ import math
 from absl import logging
 import numpy as np
 import six
-from six.moves import xrange
+from six.moves import xrange  # pyrefly: ignore[missing-source-for-stubs]
 import tensorflow as tf
 
 from tensorflow_examples.lite.model_maker.third_party.efficientdet import utils
@@ -625,9 +625,9 @@ class Model(tf.keras.Model):
       raise ValueError('blocks_args should be a list.')
     self._global_params = global_params
     self._blocks_args = blocks_args
-    self._relu_fn = global_params.relu_fn or tf.nn.swish
-    self._batch_norm = global_params.batch_norm
-    self._fix_head_stem = global_params.fix_head_stem
+    self._relu_fn = global_params.relu_fn or tf.nn.swish  # pyrefly: ignore[missing-attribute]
+    self._batch_norm = global_params.batch_norm  # pyrefly: ignore[missing-attribute]
+    self._fix_head_stem = global_params.fix_head_stem  # pyrefly: ignore[missing-attribute]
 
     self.endpoints = None
 
@@ -750,7 +750,7 @@ class Model(tf.keras.Model):
         is_reduction = True
         reduction_idx += 1
 
-      survival_prob = self._global_params.survival_prob
+      survival_prob = self._global_params.survival_prob  # pyrefly: ignore[missing-attribute]
       if survival_prob:
         drop_rate = 1.0 - survival_prob
         survival_prob = 1.0 - drop_rate * float(idx) / len(self._blocks)

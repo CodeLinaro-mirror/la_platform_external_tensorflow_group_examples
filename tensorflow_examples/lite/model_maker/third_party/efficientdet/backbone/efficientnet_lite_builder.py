@@ -56,7 +56,7 @@ def efficientnet_lite(width_coefficient=None,
                       dropout_rate=0.2,
                       survival_prob=0.8):
   """Creates a efficientnet model."""
-  global_params = efficientnet_model.GlobalParams(
+  global_params = efficientnet_model.GlobalParams(  # pyrefly: ignore[missing-argument]
       blocks_args=_DEFAULT_BLOCKS_ARGS,
       batch_norm_momentum=0.99,
       batch_norm_epsilon=1e-3,
