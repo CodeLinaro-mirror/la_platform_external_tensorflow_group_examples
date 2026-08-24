@@ -174,7 +174,7 @@ class Searcher(object):
       embedder_path: Path to the TFLite Embedder model file.
     """
     self._serialized_scann_path = serialized_scann_path
-    self._metadata = metadata
+    self._metadata = metadata  # pyrefly: ignore[invalid-type-var]
     self._embedder_path = embedder_path
 
   @classmethod
@@ -352,4 +352,4 @@ class Searcher(object):
       output_tflite_path = export_filename
       with tf.io.gfile.GFile(output_tflite_path, "wb") as f:
         f.write(populator.get_model_buffer())
-      tf.io.gfile.rmtree(tmpdir)
+      tf.io.gfile.rmtree(tmpdir)  # pyrefly: ignore[unbound-name]

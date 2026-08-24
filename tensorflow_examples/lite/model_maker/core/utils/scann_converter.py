@@ -215,13 +215,13 @@ def convert_artifacts_to_leveldb(output_file_path: str,
     embedding_dim = int(artifacts.float_dataset.shape[1])
     float_dataset = artifacts.float_dataset.reshape((-1,))
 
-  if len(artifacts.partition_assignments.shape) != 1:
+  if len(artifacts.partition_assignments.shape) != 1:  # pyrefly: ignore[missing-attribute]
     raise ValueError('Partition assignment array has to be 1D')
 
   # Raises exception if both hashed_dataset and float_dataset are not
   # None, or both are None
   serialized_index_file = index_builder.create_serialized_index_file(
-      embedding_dim,
+      embedding_dim,  # pyrefly: ignore[unbound-name]
       artifacts.ondevice_config.SerializeToString(),
       userinfo,
       artifacts.partition_assignments,

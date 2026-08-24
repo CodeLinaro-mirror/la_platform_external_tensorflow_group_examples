@@ -32,7 +32,7 @@ class MetadataLoader(object):
   """MetadataLoader class to load metadata for each input data."""
 
   def __init__(self, func: Callable[..., AnyStr]) -> None:
-    self._func = func
+    self._func = func  # pyrefly: ignore[invalid-type-var]
 
   def load(self, path: str, **kwargs) -> AnyStr:
     """Loads metadata from input data path."""

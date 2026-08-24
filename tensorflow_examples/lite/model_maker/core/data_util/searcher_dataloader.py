@@ -51,7 +51,7 @@ class DataLoader(object):
       # Sets dataset and metadata as empty. Will load them from raw input data
       # later.
       self._dataset = np.array([])
-      self._metadata = []
+      self._metadata = []  # pyrefly: ignore[invalid-type-var]
     else:
       # Directly sets dataset and metadata.
       self._dataset = dataset
@@ -82,7 +82,7 @@ class DataLoader(object):
   @property
   def metadata(self) -> List[AnyStr]:
     """Gets the metadata."""
-    return self._metadata
+    return self._metadata  # pyrefly: ignore[bad-return]
 
   @property
   def embedder_path(self) -> Optional[str]:
@@ -103,4 +103,4 @@ class DataLoader(object):
 
     # Appends the array.
     self._cache_dataset_list.append(data_loader.dataset)
-    self._metadata = self._metadata + data_loader.metadata
+    self._metadata = self._metadata + data_loader.metadata  # pyrefly: ignore[unsupported-operation]
