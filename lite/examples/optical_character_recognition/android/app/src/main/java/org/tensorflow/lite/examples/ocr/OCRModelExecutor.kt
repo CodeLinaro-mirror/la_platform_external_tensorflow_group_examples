@@ -43,8 +43,8 @@ import org.opencv.core.Point
 import org.opencv.core.RotatedRect
 import org.opencv.core.Size
 import org.opencv.dnn.Dnn.NMSBoxesRotated
-import org.opencv.imgproc.Imgproc.boxPoints
-import org.opencv.imgproc.Imgproc.getPerspectiveTransform
+import org.opencv.geometry.Geometry.boxPoints
+import org.opencv.geometry.Geometry.getPerspectiveTransform
 import org.opencv.imgproc.Imgproc.warpPerspective
 import org.opencv.utils.Converters.vector_RotatedRect_to_Mat
 import org.opencv.utils.Converters.vector_float_to_Mat
