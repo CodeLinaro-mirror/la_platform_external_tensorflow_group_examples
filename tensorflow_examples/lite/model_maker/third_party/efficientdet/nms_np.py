@@ -162,7 +162,7 @@ def soft_nms(dets, nms_configs):
   retained_box = []
   while dets.size > 0:
     max_idx = np.argmax(dets[:, 4], axis=0)
-    dets[[0, max_idx], :] = dets[[max_idx, 0], :]
+    dets[[0, max_idx], :] = dets[[max_idx, 0], :]  # pyrefly: ignore[bad-index, unsupported-operation]
     retained_box.append(dets[0, :-1])
 
     xx1 = np.maximum(dets[0, 0], dets[1:, 0])
